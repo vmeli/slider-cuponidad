@@ -62,6 +62,7 @@
   	background: url('./boton-derecho.png') rgb(255, 20,20);
   	background-repeat: no-repeat;
   	background-size: contain;
+  	background-position-x: 4px;
   }
   .wrapper-carousel-section .js-Carousel,
   .wrapper-carousel-section {
@@ -225,13 +226,23 @@
 		width: auto;
 	}
 	.item-description {
-		padding: 1em 0.5em;
+		padding: 0.2em 0.6em 0.9em;
 	}
 	.item-info-prices {
 		margin: 6px 10px 10px;
 	}
 	.wrapper-tag-section-slider {
 		width: 100%;
+	}
+	.item-title {
+		padding-top: 0.3em;	
+		font-size: 35px;
+	}
+	.wrapper-carousel-section .arrowPrev-navSection, 
+	.wrapper-carousel-section .arrowNext-navSection {
+		top: 42%;
+		width: 18px;
+		height: 27px;
 	}
   }
 </style>
@@ -346,7 +357,7 @@
 	<script type="text/javascript">
 		var carouselCuponidadSection = new Carousel({
 		elem: 'carousel-cuponidad-section', // id of the carousel container
-		autoplay: true, // starts the rotation automatically
+		autoplay: false, // starts the rotation automatically
 		infinite: true, // enables the infinite mode
 		interval: 5000, // interval between slide changes
 		initial: 0, // slide to start with
