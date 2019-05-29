@@ -71,6 +71,7 @@
   }
   .item	{
   	font-size: 0;
+  	position: relative;
   }
   .item-title,
   .item-description {
@@ -80,7 +81,6 @@
   	font-size: 41px;
   	font-family: 'akrobatextrabold','Helvetica Neue', 'PT Sans', Arial;
   	text-transform: uppercase;
-  	padding-top: 1em;
   }
   .item-description {
   	font-size: 24px;
@@ -194,16 +194,17 @@
   .side-left {
   	width: 40%;
   	position: relative;
-  	padding-top: 72px;
   	text-align: center;
   }
   .wrapper-tag-section-slider {
   	position: absolute;
   	width: 40%;
-  	top: 0;
+  	top: -15px;
   	left: 0;
-  	text-align: center;
   }
+  .wrapper-btn-slider {
+	display: none;
+   }
   .side-right {
   	width: 60%;
   }
@@ -217,6 +218,9 @@
   		display: block;
   		vertical-align: middle;
   		width: 100%;
+  	}
+  	.side-left {
+  		padding-top: 31px;
   	}
 	.item-wrapper {
 		padding: 20px;
@@ -233,6 +237,10 @@
 	}
 	.wrapper-tag-section-slider {
 		width: 100%;
+		top: -20px;
+	}
+	.wrapper-tag-section-slider img {
+		width: 37%;
 	}
 	.item-title {
 		padding-top: 0.3em;	
@@ -240,9 +248,32 @@
 	}
 	.wrapper-carousel-section .arrowPrev-navSection, 
 	.wrapper-carousel-section .arrowNext-navSection {
-		top: 42%;
+		top: 20px;
 		width: 18px;
-		height: 27px;
+		height: 18px;
+	}
+	.wrapper-carousel-section .arrowNext-navSection {
+		background: url('./boton-derecho-mobile.png') rgb(255, 20,20);
+		background-size: contain;
+		border-top-left-radius: initial;
+		border-bottom-left-radius: initial;
+		border-radius: 100px;
+		right: 13px;
+	}
+	.wrapper-carousel-section .arrowPrev-navSection {
+		background: url('./boton-izquierdo-mobile.png') rgb(255, 20,20);
+		background-size: contain;
+	    border-top-right-radius: initial;
+    	border-bottom-right-radius: initial;
+		border-radius: 100px;
+		right: 78px;
+		left: auto;
+	}
+	.wrapper-btn-slider {
+		display: inline-block;
+		position: absolute; 
+		top: 10px;
+		right: 10px;
 	}
   }
 </style>
@@ -257,7 +288,7 @@
 							<a href="#">
 								<div class="item">
 									<div class="wrapper-tag-section-slider">
-										<img class="tag-section-slider" src="./tag-belleza.png">
+										<img class="tag-section-slider" src="./belleza-desktop.png">
 									</div>
 									<div class="side-left">
 										<div class="item-title">
@@ -304,7 +335,7 @@
 							<a href="#">
 								<div class="item">
 									<div class="wrapper-tag-section-slider">
-										<img class="tag-section-slider" src="./tag-belleza.png">
+										<img class="tag-section-slider" src="https://picsum.photos/id/932/130/43">
 									</div>
 									<div class="side-left">
 										<div class="item-title">
@@ -348,6 +379,7 @@
 			        </li>
 		    	</ul>
 			</div>
+			<img class="wrapper-btn-slider" src="./wrapper-btn-slider.png">
 			<div class="js-Carousel-arrowPrev arrowPrev-navSection"></div>
 			<div class="js-Carousel-arrowNext arrowNext-navSection"></div>
 		</div> 
@@ -357,7 +389,7 @@
 	<script type="text/javascript">
 		var carouselCuponidadSection = new Carousel({
 		elem: 'carousel-cuponidad-section', // id of the carousel container
-		autoplay: true, // starts the rotation automatically
+		autoplay: false, // starts the rotation automatically
 		infinite: true, // enables the infinite mode
 		interval: 4000, // interval between slide changes
 		initial: 0, // slide to start with
