@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cuponidad.pe/static/vendor/carrousel-vainilla/css/vainilla-js-carousel.css?v=190">
+	<link rel="stylesheet" type="text/css" href="./font.css">
+</head>
+<style type="text/css">
+	body {
+		margin: 0;
+		padding: 0;
+		margin-top: 20px;
+	}
+	* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .wrapper {
+  	max-width: 1126px;
+  	width: 100%;
+  	margin: auto;
+  }
+  .wrapper-carousel-section {
+  	position: relative;
+  }
+  .wrapper-carousel-section .js-Carousel{
+  	margin: 0;
+  }
+  .wrapper-carousel-section .arrowPrev-navSection, 
+  .wrapper-carousel-section .arrowNext-navSection {
+  	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+	height: 42px;
+	background-color: rgb(255, 20, 20);
+	text-align: center;
+	line-height: 42px;
+	color: #FFF;
+  }
+  .wrapper-carousel-section .arrowPrev-navSection {
+  	left: 0;
+	border-top-right-radius: 20px;
+  	border-bottom-right-radius: 20px;
+  	background: url('./boton-izquierdo.png') rgb(255, 20,20);
+  	background-repeat: no-repeat;
+  	background-size: contain;
+  }
+  .wrapper-carousel-section .arrowNext-navSection {
+	right: 0;
+  	border-top-left-radius: 20px;
+  	border-bottom-left-radius: 20px;
+  	background: url('./boton-derecho.png') rgb(255, 20,20);
+  	background-repeat: no-repeat;
+  	background-size: contain;
+  }
+  .wrapper-carousel-section .js-Carousel,
+  .wrapper-carousel-section {
+  	width: 100%;
+  	height: auto;
+  }
+  .item	{
+  	font-size: 0;
+  }
+  .item-title,
+  .item-description {
+  	color: rgb(100,100,100);
+  }
+  .item-title {
+  	font-size: 41px;
+  	font-family: 'akrobatextrabold','Helvetica Neue', 'PT Sans', Arial;
+  	text-transform: uppercase;
+  	padding-top: 1em;
+  }
+  .item-description {
+  	font-size: 24px;
+  	font-family: 'akrobatsemibold','Helvetica Neue', 'PT Sans', Arial;
+  	line-height: 1.2em;
+  	padding: 1em 2em;
+  }
+  .item-wrapper {
+  	background-color: #f7d8dd;
+  	padding: 15px 30px;
+  }
+  .item-wrapper a {
+  	text-decoration: none;
+  }
+  .side-left-info,
+  .side-right-info,
+  .side-left,
+  .side-right {
+  	display: inline-block;
+  }
+  .side-left,
+  .side-right {
+  	vertical-align: middle;
+  }
+  .side-left-info,
+  .side-right-info {
+	vertical-align: middle;
+  }
+  .side-left-info {
+  	width: 50%;
+  	max-width: 162px;
+  	font-size: 12px;
+  }
+  .side-right-info {
+  	width: 50%;
+  	font-size: 15px;
+  	text-align: right;
+  }
+  .info-price-ofert {
+  	font-size: 0;
+  	text-align: center;
+  }
+  .info-price-ofert .price-tag,
+  .info-price-ofert .price,
+  .info-price-ofert {
+  	height: 49px;
+  	font-family: 'akrobatextrabold','Helvetica Neue', 'PT Sans', Arial;
+  	line-height: 22px;
+  }
+  .info-price-ofert .price-tag,
+  .info-price-ofert .price {
+  	vertical-align: middle;
+  }
+  .info-price-discount .discount,
+  .info-price-ofert .price {
+  	font-size: 18px;
+  	font-family: 'akrobatextrabold','Helvetica Neue', 'PT Sans', Arial;
+  }
+  .info-price-discount .price-tag,
+  .info-price-ofert .price-tag,
+  .info-price-discount {
+  	text-align: center;
+  }
+  .info-price-discount .price-tag,
+  .info-price-ofert .price-tag {
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	background-color: rgb(255, 20, 20);
+	color: #FFF;
+	height: 49px;
+	width: 22px;
+	font-size: 13px;
+	float: left;
+  }
+  .info-price-ofert .price {
+	line-height: 2em;
+	font-size: 27px;
+  }
+  .item-info-prices .item-bg{
+	background-color: #FFF;
+	border-radius: 7px;
+	overflow: hidden;
+	margin-bottom: 7px;
+	color: rgb(255, 20, 20);
+  }
+  .item-info-prices .item-bg:last-of-type {
+  	height: 29px;
+  	font-family: 'akrobatsemibold','Helvetica Neue', 'PT Sans', Arial;
+  }
+  .info-price-discount {
+  	line-height: 2.5em;
+  }
+  .side-right-info-btn {
+  	width: 56%;
+  	max-width: 93px;
+    display: inline-block;
+    padding: 10px 0;
+    border: 1px solid rgb(255, 20, 20);
+    border-radius: 5px;
+    background-color: rgb(255, 20, 20);
+    color: #FFF;
+    font-family: 'akrobatextrabold','Helvetica Neue', 'PT Sans', Arial;
+    text-align: center;
+    transition: all .4s linear;
+  }
+  .side-right-info-btn:hover {
+  	color: rgb(255, 20, 20);
+  	background-color: #FFF;
+  	cursor: pointer;
+  }
+  .side-left {
+  	width: 40%;
+  	position: relative;
+  	padding-top: 72px;
+  	text-align: center;
+  }
+  .wrapper-tag-section-slider {
+  	position: absolute;
+  	width: 40%;
+  	top: 0;
+  	left: 0;
+  	text-align: center;
+  }
+  .side-right {
+  	width: 60%;
+  }
+  .side-right img {
+  	width: 100%;
+  	border-radius: 20px;
+  }
+  @media (max-width: 768px) {
+  	.side-left,
+  	.side-right {
+  		display: block;
+  		vertical-align: middle;
+  		width: 100%;
+  	}
+	.item-wrapper {
+		padding: 20px;
+	}
+	.side-right-info-btn {
+		padding: 0.5em;
+		width: auto;
+	}
+	.item-description {
+		padding: 1em 0.5em;
+	}
+	.item-info-prices {
+		margin: 6px 10px 10px;
+	}
+	.wrapper-tag-section-slider {
+		width: 100%;
+	}
+  }
+</style>
+<body>
+
+	<div class="wrapper">
+		<div class="wrapper-carousel-section">
+			<div class="js-Carousel" id="carousel-cuponidad-section">
+		    	<ul>
+			        <li>
+						<div class="item-wrapper">
+							<a href="#">
+								<div class="item">
+									<div class="wrapper-tag-section-slider">
+										<img class="tag-section-slider" src="./tag-belleza.png">
+									</div>
+									<div class="side-left">
+										<div class="item-title">
+											Marco Aldany
+										</div>
+										<div class="item-description">
+											Por color + lavado + cepillado + masaje capilar
+										</div>
+										<div class="item-info-prices">
+											<div class="side-left-info">
+												<div class="item-bg">
+													<div class="info-price-ofert">
+														<div class="price-tag">
+															PRECIO
+														</div>
+														<div class="price">
+															s/ 200.90
+														</div>
+													</div>
+												</div>
+												<div class="item-bg">
+													<div class="info-price-discount">
+														<div class="price-tag"></div>
+														<div class="discount">
+															46% <span class="discount-tag">DSCTO.</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="side-right-info">
+												<span class="side-right-info-btn">CLICK AQUÍ</span>
+											</div>
+										</div>
+									</div>
+									<div class="side-right">
+										<img src="https://picsum.photos/615/371/?random">
+									</div>
+								</div>
+							</a>
+						</div>
+			        </li>
+			        <li>
+						<div class="item-wrapper">
+							<a href="#">
+								<div class="item">
+									<div class="wrapper-tag-section-slider">
+										<img class="tag-section-slider" src="./tag-belleza.png">
+									</div>
+									<div class="side-left">
+										<div class="item-title">
+											Marco Aldany
+										</div>
+										<div class="item-description">
+											Por color + lavado + cepillado + masaje capilar
+										</div>
+										<div class="item-info-prices">
+											<div class="side-left-info">
+												<div class="item-bg">
+													<div class="info-price-ofert">
+														<div class="price-tag">
+															PRECIO
+														</div>
+														<div class="price">
+															s/ 200.90
+														</div>
+													</div>
+												</div>
+												<div class="item-bg">
+													<div class="info-price-discount">
+														<div class="price-tag"></div>
+														<div class="discount">
+															46% <span class="discount-tag">DSCTO.</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="side-right-info">
+												<span class="side-right-info-btn">CLICK AQUÍ</span>
+											</div>
+										</div>
+									</div>
+									<div class="side-right">
+										<img src="https://picsum.photos/id/237/615/371">
+									</div>
+								</div>
+							</a>
+						</div>
+			        </li>
+		    	</ul>
+			</div>
+			<div class="js-Carousel-arrowPrev arrowPrev-navSection"></div>
+			<div class="js-Carousel-arrowNext arrowNext-navSection"></div>
+		</div> 
+	</div>	
+
+	<script type="text/javascript" src="https://cuponidad.pe/static/vendor/carrousel-vainilla/js/vainilla-js-carouselhome.js?v=50"></script>
+	<script type="text/javascript">
+		var carouselCuponidadSection = new Carousel({
+		elem: 'carousel-cuponidad-section', // id of the carousel container
+		autoplay: true, // starts the rotation automatically
+		infinite: true, // enables the infinite mode
+		interval: 5000, // interval between slide changes
+		initial: 0, // slide to start with
+		dots: false, // show navigation dots
+		arrows: true, // show navigation arrows
+		slides: 1,
+		slideWidth: 1126,
+		touch: true,
+		resize: true,
+		arrowPrev: 'arrowPrev-navSection',
+		arrowNext: 'arrowNext-navSection'
+		});
+
+		carouselCuponidadSection.init();
+	</script>
+</body>
+</html>
